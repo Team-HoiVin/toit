@@ -1,7 +1,13 @@
 import React from 'react';
 
+import ZustandTest from '@/components/ZustandTest';
+
 const page = () => {
-  return <div className='text-red-700'>Hello World</div>;
+  return (
+    <div>
+      <ZustandTest />
+    </div>
+  );
 };
 
 export default page;
