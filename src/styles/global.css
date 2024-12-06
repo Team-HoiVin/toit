@@ -37,3 +37,46 @@
 html {
   font-size: 62.5%;
 }
+
+@layer components {
+  .btn-container {
+    @apply text-text-inverse;
+    @apply disabled:bg-interaction-inactive;
+  }
+
+  .btn-container-primary {
+    @apply hover:bg-interaction-hover;
+    @apply active:bg-interaction-pressed;
+    @apply btn-container bg-brand-primary;
+  }
+
+  .btn-container-danger {
+    @apply btn-container bg-status-danger;
+  }
+
+  .btn-outline {
+    @apply box-border border;
+    @apply disabled:border-interaction-inactive disabled:text-interaction-inactive;
+  }
+
+  .btn-outline-primary {
+    @apply hover:border-interaction-hover hover:text-interaction-hover;
+    @apply active:border-interaction-pressed active:text-interaction-pressed;
+    @apply border-brand-primary text-brand-primary;
+    @apply btn-outline;
+  }
+
+  .btn-ghost {
+    @apply btn-outline bg-white;
+  }
+
+  .btn-ghost-primary {
+    @apply btn-outline-primary;
+    @apply btn-ghost;
+  }
+
+  .btn-ghost-default {
+    @apply border-text-default text-text-default;
+    @apply btn-ghost;
+  }
+}
