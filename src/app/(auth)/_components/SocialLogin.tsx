@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface IQuickAuth {
   title: string;
@@ -27,7 +28,7 @@ const ICONS = [
  * @TODO 간편 회원가입 및 로그인 로직 추가 필요
  */
 
-const QuickAuth = ({ title }: IQuickAuth) => {
+const SocialLogin = ({ title }: IQuickAuth) => {
   return (
     <div className='grid gap-[1.6rem]'>
       <div>
@@ -39,8 +40,8 @@ const QuickAuth = ({ title }: IQuickAuth) => {
         <p className='font-medium text-white'>{title}</p>
         <ul className='flex gap-[1.6rem]'>
           {ICONS.map((icon, idx) => (
-            <li key={idx} className='relative size-[42px]'>
-              <a href={icon.href} className='flex'>
+            <li key={idx} className='size-[42px]'>
+              <Link href={icon.href} className='relative flex size-full'>
                 <Image
                   src={icon.src}
                   alt={icon.alt}
@@ -48,7 +49,7 @@ const QuickAuth = ({ title }: IQuickAuth) => {
                   priority
                   sizes='maxWidth:100%'
                 />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -57,4 +58,4 @@ const QuickAuth = ({ title }: IQuickAuth) => {
   );
 };
 
-export default QuickAuth;
+export default SocialLogin;

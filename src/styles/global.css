@@ -84,4 +84,8 @@ html {
   .auth-divider::before {
     @apply inline-block h-[1px] w-full bg-border-primary content-[''];
   }
+
+  .green-underline {
+    @apply text-md font-medium text-emerald-500 underline decoration-solid decoration-from-font underline-offset-2 sm:text-base sm:leading-[1.5];
+  }
 }
